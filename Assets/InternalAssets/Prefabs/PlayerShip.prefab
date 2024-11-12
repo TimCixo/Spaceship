@@ -211,6 +211,8 @@ GameObject:
   m_Component:
   - component: {fileID: 27339266397236209}
   - component: {fileID: 153867011890236732}
+  - component: {fileID: -4448575495853221913}
+  - component: {fileID: 6239138249278858329}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -263,6 +265,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4448575495853221913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068329928565989210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ce91278ae988f43b2f64d118675114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveAction: {fileID: 1394241200583956600, guid: ab84c4e3e851e7b47918429644526b6d, type: 3}
+--- !u!114 &6239138249278858329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068329928565989210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fadfc1111535be4a9744520aea062b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4994535655381199249
 GameObject:
   m_ObjectHideFlags: 0
