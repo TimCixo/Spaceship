@@ -213,6 +213,8 @@ GameObject:
   - component: {fileID: 153867011890236732}
   - component: {fileID: -4448575495853221913}
   - component: {fileID: 6239138249278858329}
+  - component: {fileID: 2637485567663950858}
+  - component: {fileID: 8923655748093984995}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -290,8 +292,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fadfc1111535be4a9744520aea062b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 14
-  _rotationSpeed: 7
+--- !u!114 &2637485567663950858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068329928565989210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9681f3414b3aaa445857cd57fdb74bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8923655748093984995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068329928565989210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7b86196d93cdb41999f6e42b6248ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spaceshipBaseStats: {fileID: 11400000, guid: 2bdd7b0c82d23f54e95c6cdebf07b1ea, type: 2}
 --- !u!1 &4994535655381199249
 GameObject:
   m_ObjectHideFlags: 0
