@@ -33,14 +33,14 @@ public class PlayerMovementPresenter
 
     private void Move()
     {
-        Vector2 force = _view.transform.up * _model.Direction.y * _model.MovementSpeed;
+        Vector2 force = _view.transform.up * _model.Direction.y * _model.StatsPresenter.MovementSpeed;
 
         _view.Rigidbody2D.AddForce(force, ForceMode2D.Force);
     }
 
     private void Rotate()
     {
-        float force = -_model.Direction.x * _model.RotationSpeed;
+        float force = -_model.Direction.x * _model.StatsPresenter.RotationSpeed;
 
         _view.Rigidbody2D.MoveRotation(_view.Rigidbody2D.rotation + force);
     }

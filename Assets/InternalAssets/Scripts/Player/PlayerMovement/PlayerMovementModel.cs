@@ -2,21 +2,18 @@ using UnityEngine;
 
 public class PlayerMovementModel
 {
-    private float _movementSpeed;
-    private float _rotationSpeed;
+    private PlayerStatsPresenter _statsPresenter;
     private Vector2 _direction;
 
-    public float MovementSpeed => _movementSpeed;
-    public float RotationSpeed => _rotationSpeed;
+    public PlayerStatsPresenter StatsPresenter => _statsPresenter;
     public Vector2 Direction
     {
         get => _direction;
         set => _direction = value;
     }
 
-    public PlayerMovementModel(float movementSpeed, float rotationSpeed)
+    public PlayerMovementModel(PlayerStatsPresenter statsPresenter)
     {
-        _movementSpeed = movementSpeed;
-        _rotationSpeed = rotationSpeed;
+        _statsPresenter = statsPresenter;
     }
 }
