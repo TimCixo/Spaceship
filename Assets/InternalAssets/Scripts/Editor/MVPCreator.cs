@@ -113,6 +113,8 @@ public class {_baseName}Manager : MonoBehaviour
     private {_baseName}View _view;
     private {_baseName}Presenter _presenter;
 
+    public {_baseName}Presenter Presenter => _presenter;
+
     void Awake()
     {{
         _model = new {_baseName}Model();
