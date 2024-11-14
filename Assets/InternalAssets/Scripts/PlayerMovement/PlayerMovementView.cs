@@ -10,6 +10,8 @@ public class PlayerMovementView : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
 
     public Rigidbody2D Rigidbody2D => _rigidbody2D;
+    
+    public Action OnFixedUpdate;
     public Action<Vector2> OnMovePerformed;
     public Action OnMoveCanceled;
 
@@ -30,6 +32,11 @@ public class PlayerMovementView : MonoBehaviour
         _moveAction.action.Disable();
         _moveAction.action.performed -= HandleMovePerformed;
         _moveAction.action.canceled -= HandleMoveCanceled;
+    }
+
+    private void FixedUpdate()
+    {
+        OnFixedUpdate?.Invoke();
     }
 
     private void HandleMovePerformed(InputAction.CallbackContext context)

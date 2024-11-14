@@ -10,17 +10,39 @@ public class PlayerMovementPresenter
         _model = model;
         _view = view;
 
+        _view.OnFixedUpdate += OnFixedUpdate;
         _view.OnMovePerformed += OnMovePerformed;
         _view.OnMoveCanceled += OnMoveCanceled;
     }
 
-    private void OnMovePerformed(Vector2 direction)
+    private void OnFixedUpdate()
     {
-        _view.Rigidbody2D.velocity = direction * _model.MovementSpeed;
+        Move();
+        Rotate();
     }
 
-    public void OnMoveCanceled() 
-    { 
-        _view.Rigidbody2D.velocity = Vector2.zero;
+    private void OnMovePerformed(Vector2 direction)
+    {
+        _model.Direction = direction;
+    }
+
+    private void OnMoveCanceled()
+    {
+        _model.Direction = Vector2.zero;
+    }
+
+    private void Move()
+    {
+        Vector2 force = _view.transform.up * _model.Direction.y * _model.MovementSpeed;
+
+        _view.Rigidbody2D.AddForce(force, ForceMode2D.Force);
+    }
+
+    private void Rotate()
+    {
+        float force = -_model.Direction.x * _model.RotationSpeed;
+
+        _view.Rigidbody2D.MoveRotation(_view.Rigidbody2D.rotation + force);
     }
 }
+

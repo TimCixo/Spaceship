@@ -231,9 +231,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 153867011890236732, guid: 8f066a5a7044e3047b16b888fd4e0fb1, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 153867011890236732, guid: 8f066a5a7044e3047b16b888fd4e0fb1, type: 3}
+      propertyPath: m_LinearDrag
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 153867011890236732, guid: 8f066a5a7044e3047b16b888fd4e0fb1, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4068329928565989210, guid: 8f066a5a7044e3047b16b888fd4e0fb1, type: 3}
       propertyPath: m_Name
       value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239138249278858329, guid: 8f066a5a7044e3047b16b888fd4e0fb1, type: 3}
+      propertyPath: _movementSpeed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239138249278858329, guid: 8f066a5a7044e3047b16b888fd4e0fb1, type: 3}
+      propertyPath: _rotationSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
