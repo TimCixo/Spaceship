@@ -1,15 +1,15 @@
 
-public class PlayerStatsPresenter
+public class SpaceshipStatsPresenter
 {
-    private PlayerStatsModel _model;
-    private PlayerStatsView _view;
+    private SpaceshipStatsModel _model;
+    private SpaceshipStatsView _view;
 
     public float MovementSpeed => _model.MovementSpeed;
     public float RotationSpeed => _model.RotationSpeed;
     public float Health => _model.Health;
     public float Damage => _model.Damage;
 
-    public PlayerStatsPresenter(PlayerStatsModel model, PlayerStatsView view)
+    public SpaceshipStatsPresenter(SpaceshipStatsModel model, SpaceshipStatsView view)
     {
         _model = model;
         _view = view;

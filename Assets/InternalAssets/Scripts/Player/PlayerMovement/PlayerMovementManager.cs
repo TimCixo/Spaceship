@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovementView), typeof(PlayerStatsManager))]
+[RequireComponent(typeof(PlayerMovementView), typeof(SpaceshipStatsManager))]
 public class PlayerMovementManager : MonoBehaviour
 { 
     private PlayerMovementView _view;
@@ -11,7 +11,7 @@ public class PlayerMovementManager : MonoBehaviour
 
     private void Awake()
     {
-        _model = new PlayerMovementModel(GetComponent<PlayerStatsManager>().Presenter);
+        _model = new PlayerMovementModel(GetComponent<SpaceshipStatsManager>().Presenter);
         _view = GetComponent<PlayerMovementView>();
         _presenter = new PlayerMovementPresenter(_model, _view);
     }

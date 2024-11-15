@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerStatsView : MonoBehaviour
+public class SpaceshipStatsView : MonoBehaviour
 {
     // View components and UI handling here
 }

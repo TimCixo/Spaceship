@@ -1,4 +1,4 @@
-public class PlayerStatsModel
+public class SpaceshipStatsModel
 {
     private SpaceshipBaseStats _spaceshipBaseStats;
     private float _movementSpeed;
@@ -27,7 +27,7 @@ public class PlayerStatsModel
         set { _damage = value > 0 ? value : 0; }
     }
 
-    public PlayerStatsModel(SpaceshipBaseStats spaceshipBaseStats)
+    public SpaceshipStatsModel(SpaceshipBaseStats spaceshipBaseStats)
     {
         _spaceshipBaseStats = spaceshipBaseStats;
 

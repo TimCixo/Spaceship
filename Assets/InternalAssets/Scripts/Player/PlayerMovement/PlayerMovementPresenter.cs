@@ -45,4 +45,3 @@ public class PlayerMovementPresenter
         _view.Rigidbody2D.MoveRotation(_view.Rigidbody2D.rotation + force);
     }
 }
-

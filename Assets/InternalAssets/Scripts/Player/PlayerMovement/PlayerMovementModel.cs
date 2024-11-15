@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class PlayerMovementModel
 {
-    private PlayerStatsPresenter _statsPresenter;
+    private SpaceshipStatsPresenter _statsPresenter;
     private Vector2 _direction;
 
-    public PlayerStatsPresenter StatsPresenter => _statsPresenter;
+    public SpaceshipStatsPresenter StatsPresenter => _statsPresenter;
     public Vector2 Direction
     {
         get => _direction;
         set => _direction = value;
     }
 
-    public PlayerMovementModel(PlayerStatsPresenter statsPresenter)
+    public PlayerMovementModel(SpaceshipStatsPresenter statsPresenter)
     {
         _statsPresenter = statsPresenter;
     }
