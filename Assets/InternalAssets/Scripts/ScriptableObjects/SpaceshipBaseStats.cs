@@ -16,9 +16,12 @@ public class SpaceshipBaseStats : ScriptableObject
     [Header("Weapon Settings")]
     [SerializeField, Tooltip("Base spaceship damage")]
     private float _baseDamage = 20f;
+    [SerializeField, Tooltip("Base spaceship attack speed")]
+    private float _baseAttackSpeed = 1f;
 
     public float BaseMovementSpeed => _baseMovementSpeed;
     public float BaseRotationSpeed => _baseRotationSpeed;
     public float MaxHealth => _maxHealth;
     public float BaseDamage => _baseDamage;
+    public float BaseAttackSpeed => _baseAttackSpeed;
 }
