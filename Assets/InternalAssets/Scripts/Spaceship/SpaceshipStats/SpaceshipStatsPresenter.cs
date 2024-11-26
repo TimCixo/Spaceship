@@ -7,7 +7,7 @@ public class SpaceshipStatsPresenter
     public float MovementSpeed => _model.MovementSpeed;
     public float RotationSpeed => _model.RotationSpeed;
     public float Health => _model.Health;
-    public float Damage => _model.Damage;
+    public float AttackDamage => _model.AttackDamage;
     public float AttackSpeed => _model.AttackSpeed;
 
     public SpaceshipStatsPresenter(SpaceshipStatsModel model, SpaceshipStatsView view)

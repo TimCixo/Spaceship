@@ -3,6 +3,6 @@ public enum SpaceshipStatType
     MovementSpeed,
     RotationSpeed,
     MaxHealth,
-    Damage,
+    AttackDamage,
     AttackSpeed
 }

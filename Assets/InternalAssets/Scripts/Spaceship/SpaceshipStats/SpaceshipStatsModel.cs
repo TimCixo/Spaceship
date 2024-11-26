@@ -4,7 +4,7 @@ public class SpaceshipStatsModel
     private float _movementSpeed;
     private float _rotationSpeed;
     private float _health;
-    private float _damage;
+    private float _attackDamage;
     private float _attackSpeed;
 
     public float MovementSpeed
@@ -22,10 +22,10 @@ public class SpaceshipStatsModel
         get { return _health; }
         set { _health = value > 0 ? value : 0; }
     }
-    public float Damage
+    public float AttackDamage
     {
-        get { return _damage; }
-        set { _damage = value > 0 ? value : 0; }
+        get { return _attackDamage; }
+        set { _attackDamage = value > 0 ? value : 0; }
     }
 
     public float AttackSpeed
@@ -43,10 +43,10 @@ public class SpaceshipStatsModel
 
     public void Refresh() 
     { 
-        _movementSpeed = _spaceshipBaseStats.BaseMovementSpeed;
-        _rotationSpeed = _spaceshipBaseStats.BaseRotationSpeed;
+        _movementSpeed = _spaceshipBaseStats.MovementSpeed;
+        _rotationSpeed = _spaceshipBaseStats.RotationSpeed;
         _health = _spaceshipBaseStats.MaxHealth;
-        _damage = _spaceshipBaseStats.BaseDamage;
-        _attackSpeed = _spaceshipBaseStats.BaseAttackSpeed;
+        _attackDamage = _spaceshipBaseStats.AttackDamage;
+        _attackSpeed = _spaceshipBaseStats.AttackSpeed;
     }
 }

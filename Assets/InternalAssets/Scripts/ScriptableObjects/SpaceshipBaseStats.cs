@@ -5,23 +5,23 @@ public class SpaceshipBaseStats : ScriptableObject
 {
     [Header("Movement Settings")]
     [SerializeField, Tooltip("Base spaceship movement speed")]
-    private float _baseMovementSpeed = 14f;
+    private float _movementSpeed = 14f;
     [SerializeField, Tooltip("Base spaceship rotation speed")] 
-    private float _baseRotationSpeed = 7f;
+    private float _rotationSpeed = 7f;
 
     [Header("Health Settings")]
     [SerializeField, Tooltip("Max spaceship health")]
     private float _maxHealth = 100f;
 
     [Header("Weapon Settings")]
-    [SerializeField, Tooltip("Base spaceship damage")]
-    private float _baseDamage = 20f;
+    [SerializeField, Tooltip("Base spaceship attack damage")]
+    private float _attackDamage = 20f;
     [SerializeField, Tooltip("Base spaceship attack speed")]
-    private float _baseAttackSpeed = 1f;
+    private float _attackSpeed = 1f;
 
-    public float BaseMovementSpeed => _baseMovementSpeed;
-    public float BaseRotationSpeed => _baseRotationSpeed;
+    public float MovementSpeed => _movementSpeed;
+    public float RotationSpeed => _rotationSpeed;
+    public float AttackDamage => _attackDamage;
+    public float AttackSpeed => _attackSpeed;
     public float MaxHealth => _maxHealth;
-    public float BaseDamage => _baseDamage;
-    public float BaseAttackSpeed => _baseAttackSpeed;
 }
