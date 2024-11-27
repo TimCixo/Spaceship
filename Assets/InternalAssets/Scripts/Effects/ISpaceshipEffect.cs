@@ -1,4 +1,6 @@
 public interface ISpaceshipEffect
-{    
-    public float Duration { get; }
+{
+    public void Start();
+    public void Update();
+    public void Destroy();
 }

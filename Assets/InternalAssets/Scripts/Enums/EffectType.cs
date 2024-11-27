@@ -1,4 +1,5 @@
 public enum EffectType
 {
-    Status
+    Status,
+    Heal
 }

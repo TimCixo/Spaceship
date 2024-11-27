@@ -13,4 +13,9 @@ public class StatusEffectData : SpaceshipEffectData
     public SpaceshipStatType StatType => _statType;
     public float Value => _value;
     public bool IsPercentage => _isPercentage;
+
+    private void OnEnable()
+    {
+        type = EffectType.Status;
+    }
 }
