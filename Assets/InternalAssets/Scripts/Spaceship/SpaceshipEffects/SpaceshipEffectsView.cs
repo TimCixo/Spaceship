@@ -1,6 +1,12 @@
+using System;
 using UnityEngine;
 
 public class SpaceshipEffectsView : MonoBehaviour
 {
-    // View components and UI handling here
+    public event Action OnUpdate;
+
+    private void Update()
+    {
+        OnUpdate?.Invoke();
+    }
 }

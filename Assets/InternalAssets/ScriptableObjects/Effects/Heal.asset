@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca6cb014aba4fc42957442eea2533e8, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
-  _name: InstantHeal
+  _name: Heal
   _durationType: 0
   _isDynamic: 0
   _dynamicCurve:
@@ -21,5 +21,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _value: 0
-  _isPercentage: 0
+  _value: 20
+  _isPercentage: 1

@@ -15,6 +15,4 @@ public class SpaceshipEffectsManager : MonoBehaviour
         _view = GetComponent<SpaceshipEffectsView>();
         _presenter = new SpaceshipEffectsPresenter(_model, _view);
     }
-
-    // Manager logic here
 }

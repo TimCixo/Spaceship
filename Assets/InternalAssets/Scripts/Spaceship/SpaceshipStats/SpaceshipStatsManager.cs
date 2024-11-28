@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpaceshipStatsView))]
+[RequireComponent(typeof(SpaceshipStatsView), typeof(SpaceshipEffectsManager))]
 public class SpaceshipStatsManager : MonoBehaviour
 {
     [SerializeField]

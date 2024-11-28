@@ -5,12 +5,12 @@ public class EffectFabric
 {
     private readonly Dictionary<EffectType, Func<SpaceshipEffectData, ISpaceshipEffect>> _effectRegistry;
 
-    public EffectFabric()
+    public EffectFabric(SpaceshipEffectsPresenter handler)
     {
         _effectRegistry = new Dictionary<EffectType, Func<SpaceshipEffectData, ISpaceshipEffect>>();
 
-        RegisterEffect(EffectType.Status, data => new StatusEffect(data));
-        RegisterEffect(EffectType.Heal, data => new HealEffect(data));
+        RegisterEffect(EffectType.Status, data => new StatusEffect(data, handler));
+        RegisterEffect(EffectType.Heal, data => new HealEffect(data, handler));
     }
 
     public void RegisterEffect(EffectType type, Func<SpaceshipEffectData, ISpaceshipEffect> constructor)

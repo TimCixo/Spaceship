@@ -16,6 +16,5 @@ public struct Modifier
             AttackDamage = left.AttackDamage + right.AttackDamage,
             AttackSpeed = left.AttackSpeed + right.AttackSpeed,
         };
-
     }
 }

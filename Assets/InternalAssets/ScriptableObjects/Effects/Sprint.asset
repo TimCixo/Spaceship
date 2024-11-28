@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sprint
   m_EditorClassIdentifier: 
   _name: Sprint
-  _durationType: 0
+  _durationType: 2
   _isDynamic: 0
   _dynamicCurve:
     serializedVersion: 2
@@ -22,5 +22,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _statType: 0
-  _value: 0
-  _isPercentage: 0
+  _value: 35
+  _isPercentage: 1
