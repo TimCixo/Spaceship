@@ -1,6 +1,8 @@
 public interface ISpaceshipEffect
 {
-    public void Start();
+    public IValueModifier Modifier { get; set; }
+    public ILifetimeHandler LifetimeHandler{ get; set; }
+
     public void Update();
     public void Destroy();
 }

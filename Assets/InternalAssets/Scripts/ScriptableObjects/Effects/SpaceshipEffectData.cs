@@ -1,4 +1,4 @@
-using UnityEditor.EditorTools;
+using System;
 using UnityEngine;
 
 public abstract class SpaceshipEffectData : ScriptableObject
@@ -7,7 +7,7 @@ public abstract class SpaceshipEffectData : ScriptableObject
     private string _name;
     [SerializeField, Tooltip("Effect duration type")]
     private EffectDurationType _durationType;
-    [SerializeField, Tooltip("Effect duration")]
+    [SerializeField, Tooltip("Effect duration in seconds")]
     private float _duration;
     [SerializeField, Tooltip("Value changes over time")]
     private bool _isDynamic;
@@ -19,7 +19,7 @@ public abstract class SpaceshipEffectData : ScriptableObject
     public string Name => _name;
     public EffectType Type => type;
     public EffectDurationType DurationType => _durationType;
-    public float Duration => _duration;
+    public TimeSpan Duration => TimeSpan.FromSeconds(_duration);
     public bool IsDynamic => _isDynamic;
     public AnimationCurve DynamicCurve => _dynamicCurve;
 }

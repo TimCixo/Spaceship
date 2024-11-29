@@ -3,6 +3,7 @@
     using Unity.VisualScripting;
     using UnityEngine;
 
+    // TODO: Refactor this piece of shit
     public class StatusEffect : ISpaceshipEffect
     {
         private StatusEffectData _data;
@@ -10,6 +11,9 @@
         private Modifier _modifier;
         private float _start;
         private float _current;
+
+        public IValueModifier Modifier { get; set; }
+        public ILifetimeHandler LifetimeHandler{ get; set; }
 
         public StatusEffect(SpaceshipEffectData effectData, SpaceshipEffectsPresenter handler)
         {
@@ -35,11 +39,9 @@
                 return;
             }
 
-            // * Розрахунок, скільки часу пройшло з початку ефекту
-
-            // * Якщо час закінчився і EffectDurationType.Timed, то видалити ефект
-
-            // * Якщо _data.IsDynamic : bool, то на основі _data.DynamicCurve : AnimationCurve і _current : float розрахувати, наскільки збільшити ефект _data.Value
+            // Розрахунок, скільки часу пройшло з початку ефекту
+            // Якщо час закінчився і EffectDurationType.Timed, то видалити ефект
+            // Якщо _data.IsDynamic : bool, то на основі _data.DynamicCurve : AnimationCurve і _current : float розрахувати, наскільки збільшити ефект _data.Value
         }
         
         public void Destroy()

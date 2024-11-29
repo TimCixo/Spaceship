@@ -29,7 +29,7 @@ public class SpaceshipEffectsPresenter
     {
         _model.Effects.Add(effect);
 
-        effect.Start();
+        effect.Update();
     }
 
     public void RemoveEffect(ISpaceshipEffect effect)
