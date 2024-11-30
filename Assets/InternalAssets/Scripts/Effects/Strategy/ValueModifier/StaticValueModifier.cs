@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class StaticValueModifier : IValueModifier
 {
-    public float Value { get; }
-    public bool IsDynamic { get; set; }
+    public float Value => 1f;
     public AnimationCurve DynamicCurve { get; set; }
+    public ILifetimeHandler LifetimeHandler { get; set; }
 
     public void Update()
-    {}
+    {
+        // Do nothing
+    }
 }

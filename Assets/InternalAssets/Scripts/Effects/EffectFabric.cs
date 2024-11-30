@@ -24,8 +24,10 @@ public class EffectFabric
         {
             ISpaceshipEffect effect = constructor(effectData, handler);
 
-            effect.Modifier = GetValueModifier(effectData.IsDynamic);
-            effect.LifetimeHandler = GetLifetimeHandler(effectData.DurationType, effectData.Duration);
+            effect.Modifier = GetValueModifier(effectData);
+            effect.LifetimeHandler = GetLifetimeHandler(effectData);
+
+            effect.Modifier.LifetimeHandler = effect.LifetimeHandler;
 
             return effect;
         }
@@ -33,9 +35,9 @@ public class EffectFabric
         throw new ArgumentException($"Effect type {effectData.Type} is not registered.");
     }
 
-    private IValueModifier GetValueModifier(bool IsDynamic)
+    private IValueModifier GetValueModifier(SpaceshipEffectData effectData)
     {
-        if (IsDynamic)
+        if (effectData.IsDynamic)
         {
             return new DynamicValueModifier();
         }
@@ -45,18 +47,18 @@ public class EffectFabric
         }
     }
 
-    private ILifetimeHandler GetLifetimeHandler(EffectDurationType durationType, TimeSpan duration)
+    private ILifetimeHandler GetLifetimeHandler(SpaceshipEffectData effectData)
     {
-        switch (durationType)
+        switch (effectData.DurationType)
         {
             case EffectDurationType.Instant:
                 return new InstantLifetimeHandler();
             case EffectDurationType.Timed:
-                return new TimedLifetimeHandler(duration);
+                return new TimedLifetimeHandler(effectData.Duration);
             case EffectDurationType.Permanent:
                 return new PermanentLifetimeHandler();
             default:
-                throw new ArgumentException($"Effect duration type {durationType} is not supported.");
+                throw new ArgumentException($"Effect duration type {effectData.DurationType} is not supported.");
         }
     }
 }
