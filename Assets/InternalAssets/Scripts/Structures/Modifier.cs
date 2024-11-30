@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+
 public struct Modifier
 {
     public float MovementSpeed;
@@ -16,5 +18,23 @@ public struct Modifier
             AttackDamage = left.AttackDamage + right.AttackDamage,
             AttackSpeed = left.AttackSpeed + right.AttackSpeed,
         };
+    }
+
+    public static bool operator ==(Modifier left, Modifier right)
+    {
+        return left.MovementSpeed == right.MovementSpeed &&
+               left.RotationSpeed == right.RotationSpeed &&
+               left.MaxHealth == right.MaxHealth &&
+               left.AttackDamage == right.AttackDamage &&
+               left.AttackSpeed == right.AttackSpeed;
+    }
+    
+    public static bool operator !=(Modifier left, Modifier right)
+    {
+        return left.MovementSpeed != right.MovementSpeed ||
+               left.RotationSpeed != right.RotationSpeed ||
+               left.MaxHealth != right.MaxHealth ||
+               left.AttackDamage != right.AttackDamage ||
+               left.AttackSpeed != right.AttackSpeed;
     }
 }

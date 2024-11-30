@@ -12,6 +12,11 @@ public class SpaceshipEffectsModel
         get => _modifier;
         set
         {
+            if (_modifier == value)
+            {
+                return;
+            }
+            
             _modifier = value;
 
             OnModifierChanged?.Invoke(_modifier);

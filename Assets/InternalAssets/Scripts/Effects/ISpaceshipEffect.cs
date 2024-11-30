@@ -1,6 +1,6 @@
 public interface ISpaceshipEffect
 {
-    public IValueModifier Modifier { get; set; }
+    public IValueModifier ValueModifier { get; set; }
     public ILifetimeHandler LifetimeHandler{ get; set; }
 
     public void Update();

@@ -24,10 +24,11 @@ public class EffectFabric
         {
             ISpaceshipEffect effect = constructor(effectData, handler);
 
-            effect.Modifier = GetValueModifier(effectData);
+            effect.ValueModifier = GetValueModifier(effectData);
             effect.LifetimeHandler = GetLifetimeHandler(effectData);
 
-            effect.Modifier.LifetimeHandler = effect.LifetimeHandler;
+            effect.ValueModifier.LifetimeHandler = effect.LifetimeHandler;
+            effect.LifetimeHandler.OnTimeOut += effect.Destroy;
 
             return effect;
         }

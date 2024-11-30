@@ -7,7 +7,7 @@ public class HealEffect : ISpaceshipEffect
     private HealEffectData _effectData;
     private SpaceshipEffectsPresenter _handler;
 
-    public IValueModifier Modifier { get; set; }
+    public IValueModifier ValueModifier { get; set; }
     public ILifetimeHandler LifetimeHandler{ get; set; }
     
     // TODO: subscitbe Update to OnUpdate event
