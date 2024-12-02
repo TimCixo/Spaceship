@@ -17,7 +17,14 @@ public class StatusEffect : ISpaceshipEffect
         LifetimeHandler.Update();
         ValueModifier.Update();
 
-        _handler.Model.Modifier += ToModifier();
+        if (_data.IsPercentage)
+        {
+            _handler.Model.PercentageModifier += ToModifier();
+        }
+        else
+        {
+            _handler.Model.NumericModifier += ToModifier();
+        }
     }
 
     public void Destroy()

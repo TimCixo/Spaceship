@@ -6,6 +6,7 @@ public class SpaceshipStatsPresenter
 
     public float MovementSpeed => _model.MovementSpeed;
     public float RotationSpeed => _model.RotationSpeed;
+    public float MaxHealth => _model.MaxHealth;
     public float Health => _model.Health;
     public float AttackDamage => _model.AttackDamage;
     public float AttackSpeed => _model.AttackSpeed;
@@ -16,8 +17,26 @@ public class SpaceshipStatsPresenter
         _view = view;
     }
 
-    public void Refresh()
+    public Modifier BaseStatsToModifier()
     {
-        _model.Refresh();
+        return new Modifier
+        {
+            MovementSpeed = _model.BaseStats.MovementSpeed,
+            RotationSpeed = _model.BaseStats.RotationSpeed,
+            MaxHealth = _model.BaseStats.MaxHealth,
+            AttackDamage = _model.BaseStats.AttackDamage,
+            AttackSpeed = _model.BaseStats.AttackSpeed
+        };
+    }
+
+    public void SetValues(Modifier modifier)
+    {
+        _model.ResetValues();
+
+        _model.MovementSpeed += modifier.MovementSpeed;
+        _model.RotationSpeed += modifier.RotationSpeed;
+        _model.MaxHealth += modifier.MaxHealth;
+        _model.AttackDamage += modifier.AttackDamage;
+        _model.AttackSpeed += modifier.AttackSpeed;
     }
 }

@@ -1,27 +1,18 @@
-using System;
 using System.Collections.Generic;
 
 public class SpaceshipEffectsModel
 {
     private List<ISpaceshipEffect> _effects = new List<ISpaceshipEffect>();
-    private Modifier _modifier = new Modifier();
+    private SpaceshipStatsManager _statsManager;
 
     public List<ISpaceshipEffect> Effects => _effects;
-    public Modifier Modifier
+    public Modifier NumericModifier = new Modifier();
+    public Modifier PercentageModifier = new Modifier();
+    public Modifier Modifier = new Modifier();
+    public SpaceshipStatsManager StatsManager => _statsManager;
+
+    public SpaceshipEffectsModel(SpaceshipStatsManager statsManager)
     {
-        get => _modifier;
-        set
-        {
-            if (_modifier == value)
-            {
-                return;
-            }
-            
-            _modifier = value;
-
-            OnModifierChanged?.Invoke(_modifier);
-        }
+        _statsManager = statsManager;
     }
-
-    public event Action<Modifier> OnModifierChanged;
 }

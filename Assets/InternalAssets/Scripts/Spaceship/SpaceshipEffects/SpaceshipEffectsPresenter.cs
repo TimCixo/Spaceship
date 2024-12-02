@@ -1,13 +1,7 @@
-using System;
-using Unity.VisualScripting;
-using UnityEngine;
-
 public class SpaceshipEffectsPresenter
 {
     private SpaceshipEffectsModel _model;
     private SpaceshipEffectsView _view;
-
-    public SpaceshipEffectsModel Model => _model;
 
     public SpaceshipEffectsPresenter(SpaceshipEffectsModel model, SpaceshipEffectsView view)
     {
@@ -19,10 +13,24 @@ public class SpaceshipEffectsPresenter
 
     private void Update()
     {
+        _model.NumericModifier = new Modifier();
+        _model.PercentageModifier = new Modifier();
+
         foreach (ISpaceshipEffect effect in _model.Effects)
         {
             effect.Update();
         }
+
+        _model.Modifier = ModifierSum();
+
+        _model.StatsManager.Presenter.SetValues(_model.Modifier);
+    }
+
+    private Modifier ModifierSum()
+    {
+        Modifier baseModifier = _model.StatsManager.Presenter.BaseStatsToModifier();
+
+        return ((baseModifier + _model.NumericModifier) * _model.PercentageModifier / 100) + _model.NumericModifier;
     }
 
     public void AddEffect(ISpaceshipEffect effect)

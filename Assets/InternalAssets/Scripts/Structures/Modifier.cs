@@ -1,5 +1,3 @@
-using Unity.VisualScripting;
-
 public struct Modifier
 {
     public float MovementSpeed;
@@ -16,25 +14,55 @@ public struct Modifier
             RotationSpeed = left.RotationSpeed + right.RotationSpeed,
             MaxHealth = left.MaxHealth + right.MaxHealth,
             AttackDamage = left.AttackDamage + right.AttackDamage,
-            AttackSpeed = left.AttackSpeed + right.AttackSpeed,
+            AttackSpeed = left.AttackSpeed + right.AttackSpeed
         };
     }
 
-    public static bool operator ==(Modifier left, Modifier right)
+    public static Modifier operator -(Modifier left, Modifier right)
     {
-        return left.MovementSpeed == right.MovementSpeed &&
-               left.RotationSpeed == right.RotationSpeed &&
-               left.MaxHealth == right.MaxHealth &&
-               left.AttackDamage == right.AttackDamage &&
-               left.AttackSpeed == right.AttackSpeed;
+        return new Modifier
+        {
+            MovementSpeed = left.MovementSpeed - right.MovementSpeed,
+            RotationSpeed = left.RotationSpeed - right.RotationSpeed,
+            MaxHealth = left.MaxHealth - right.MaxHealth,
+            AttackDamage = left.AttackDamage - right.AttackDamage,
+            AttackSpeed = left.AttackSpeed - right.AttackSpeed
+        };
     }
-    
-    public static bool operator !=(Modifier left, Modifier right)
+
+    public static Modifier operator *(Modifier left, Modifier right)
     {
-        return left.MovementSpeed != right.MovementSpeed ||
-               left.RotationSpeed != right.RotationSpeed ||
-               left.MaxHealth != right.MaxHealth ||
-               left.AttackDamage != right.AttackDamage ||
-               left.AttackSpeed != right.AttackSpeed;
+        return new Modifier
+        {
+            MovementSpeed = left.MovementSpeed * right.MovementSpeed,
+            RotationSpeed = left.RotationSpeed * right.RotationSpeed,
+            MaxHealth = left.MaxHealth * right.MaxHealth,
+            AttackDamage = left.AttackDamage * right.AttackDamage,
+            AttackSpeed = left.AttackSpeed * right.AttackSpeed
+        };
+    }
+
+    public static Modifier operator /(Modifier left, Modifier right)
+    {
+        return new Modifier
+        {
+            MovementSpeed = left.MovementSpeed / right.MovementSpeed,
+            RotationSpeed = left.RotationSpeed / right.RotationSpeed,
+            MaxHealth = left.MaxHealth / right.MaxHealth,
+            AttackDamage = left.AttackDamage / right.AttackDamage,
+            AttackSpeed = left.AttackSpeed / right.AttackSpeed
+        };
+    }
+
+    public static Modifier operator /(Modifier left, float right)
+    {
+        return new Modifier
+        {
+            MovementSpeed = left.MovementSpeed / right,
+            RotationSpeed = left.RotationSpeed / right,
+            MaxHealth = left.MaxHealth / right,
+            AttackDamage = left.AttackDamage / right,
+            AttackSpeed = left.AttackSpeed / right
+        };
     }
 }
