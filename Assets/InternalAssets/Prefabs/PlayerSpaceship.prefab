@@ -215,6 +215,10 @@ GameObject:
   - component: {fileID: 6239138249278858329}
   - component: {fileID: 2637485567663950858}
   - component: {fileID: 8923655748093984995}
+  - component: {fileID: 2116491224789530394}
+  - component: {fileID: 3097952379910387503}
+  - component: {fileID: 8061057510074113447}
+  - component: {fileID: 5196995126121052034}
   m_Layer: 0
   m_Name: PlayerSpaceship
   m_TagString: Untagged
@@ -317,6 +321,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spaceshipBaseStats: {fileID: 11400000, guid: 2bdd7b0c82d23f54e95c6cdebf07b1ea, type: 2}
+--- !u!114 &2116491224789530394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068329928565989210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525f6d72e1b82844fa64ba7a76df5460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3097952379910387503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068329928565989210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3348f0481735465498f6d2f2ec6f9a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8061057510074113447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068329928565989210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7170a5fff1579404ab103f08f82010e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprintAction: {fileID: -1420136703688253070, guid: ab84c4e3e851e7b47918429644526b6d, type: 3}
+--- !u!114 &5196995126121052034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068329928565989210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87df1d0b43e494741933754946e323d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprintEffect: {fileID: 11400000, guid: e792c1957f24539479d47ad0719981c9, type: 2}
 --- !u!1 &4994535655381199249
 GameObject:
   m_ObjectHideFlags: 0

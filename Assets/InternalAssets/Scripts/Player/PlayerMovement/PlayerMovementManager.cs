@@ -3,9 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovementView), typeof(SpaceshipStatsManager))]
 public class PlayerMovementManager : MonoBehaviour
 { 
+    private PlayerMovementModel _model;
     private PlayerMovementView _view;
     private PlayerMovementPresenter _presenter;
-    private PlayerMovementModel _model;
 
     public PlayerMovementPresenter Presenter => _presenter;
 

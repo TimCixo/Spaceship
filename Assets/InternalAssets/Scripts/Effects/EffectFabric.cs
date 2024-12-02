@@ -18,7 +18,7 @@ public class EffectFabric
         _effectRegistry[type] = constructor;
     }
 
-    public ISpaceshipEffect ToSpaceshipEffect(SpaceshipEffectData effectData, SpaceshipEffectsPresenter handler)
+    public ISpaceshipEffect GetSpaceshipEffect(SpaceshipEffectData effectData, SpaceshipEffectsPresenter handler)
     {
         if (_effectRegistry.TryGetValue(effectData.Type, out var constructor))
         {
