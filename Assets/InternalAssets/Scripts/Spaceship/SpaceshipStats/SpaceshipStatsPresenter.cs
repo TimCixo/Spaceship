@@ -7,7 +7,7 @@ public class SpaceshipStatsPresenter
     public float MovementSpeed => _model.MovementSpeed;
     public float RotationSpeed => _model.RotationSpeed;
     public float MaxHealth => _model.MaxHealth;
-    public float Health => _model.Health;
+    public float CurrentHealth => _model.CurrentHealth;
     public float AttackDamage => _model.AttackDamage;
     public float AttackSpeed => _model.AttackSpeed;
 
@@ -15,6 +15,11 @@ public class SpaceshipStatsPresenter
     {
         _model = model;
         _view = view;
+    }
+
+    public void TakeHeal(float value)
+    {
+        _model.CurrentHealth += value;
     }
 
     public Modifier BaseStatsToModifier()

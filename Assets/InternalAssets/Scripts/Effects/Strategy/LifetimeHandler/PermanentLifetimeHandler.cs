@@ -1,3 +1,4 @@
+#pragma warning disable CS0067
 using System;
 
 public class PermanentLifetimeHandler : ILifetimeHandler

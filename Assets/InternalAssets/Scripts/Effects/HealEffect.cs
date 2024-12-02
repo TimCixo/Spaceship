@@ -1,3 +1,5 @@
+using System;
+
 public class HealEffect : ISpaceshipEffect
 {
     private HealEffectData _data;
@@ -14,10 +16,21 @@ public class HealEffect : ISpaceshipEffect
 
     public void Update()
     {
+        float value;
+
         LifetimeHandler.Update();
         ValueModifier.Update();
 
-        // TODO: Heal player
+        if (_data.IsPercentage)
+        {
+            value = _handler.Model.StatsManager.Presenter.CurrentHealth * _data.Value / 100;
+        }
+        else
+        {
+            value = _data.Value;
+        }
+        
+        _handler.Model.StatsManager.Presenter.TakeHeal(value);
     }
 
     public void Destroy()

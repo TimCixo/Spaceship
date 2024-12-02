@@ -4,7 +4,7 @@ public class SpaceshipStatsModel
     private float _movementSpeed;
     private float _rotationSpeed;
     private float _maxHealth;
-    private float _health;
+    private float _currentHealth;
     private float _attackDamage;
     private float _attackSpeed;
 
@@ -22,13 +22,13 @@ public class SpaceshipStatsModel
     }
     public float MaxHealth
     {
-        get { return _health; }
+        get { return _currentHealth; }
         set { _maxHealth = value > 0 ? value : 0; }
     }
-    public float Health
+    public float CurrentHealth
     {
-        get { return _health; }
-        set { _health = value > 0 ? value : 0; }
+        get { return _currentHealth; }
+        set { _currentHealth = value > 0 ? value : 0; }
     }
     public float AttackDamage
     {
@@ -54,7 +54,7 @@ public class SpaceshipStatsModel
         _movementSpeed = _baseStats.MovementSpeed;
         _rotationSpeed = _baseStats.RotationSpeed;
         _maxHealth = _baseStats.MaxHealth;
-        _health = _baseStats.MaxHealth;
+        _currentHealth = _baseStats.MaxHealth;
         _attackDamage = _baseStats.AttackDamage;
         _attackSpeed = _baseStats.AttackSpeed;
     }
