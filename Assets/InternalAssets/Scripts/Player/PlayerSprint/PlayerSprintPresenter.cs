@@ -18,6 +18,7 @@ public class PlayerSprintPresenter
         EffectFabric effectFabric = new EffectFabric();
         ISpaceshipEffect effect = effectFabric.GetSpaceshipEffect(_model.SprintEffect, _model.EffectsPresenter);
 
+        // TODO: Інціцалізуються не втому порядку модулі, йопта. Зроби, щоб було правильно. Інакше пізда
         _model.EffectsPresenter.AddEffect(effect);
 
         _view.OnSprintCanceled += effect.Destroy;

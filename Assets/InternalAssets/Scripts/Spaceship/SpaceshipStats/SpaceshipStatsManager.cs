@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpaceshipStatsView))]
-public class SpaceshipStatsManager : MonoBehaviour
+public class SpaceshipStatsManager : MonoBehaviour, IBootstrapable
 {
     [SerializeField]
     private SpaceshipBaseStats _spaceshipBaseStats;
@@ -12,7 +12,7 @@ public class SpaceshipStatsManager : MonoBehaviour
 
     public SpaceshipStatsPresenter Presenter => _presenter;
 
-    void Awake()
+    public void BootstrapAwake()
     {
         _model = new SpaceshipStatsModel(_spaceshipBaseStats);
         _view = GetComponent<SpaceshipStatsView>();

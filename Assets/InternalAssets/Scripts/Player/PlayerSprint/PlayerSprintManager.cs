@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerSprintView), typeof(SpaceshipEffectsManager))]
-public class PlayerSprintManager : MonoBehaviour
+public class PlayerSprintManager : MonoBehaviour, IBootstrapable
 {
     private PlayerSprintModel _model;
     private PlayerSprintView _view;
@@ -11,7 +11,7 @@ public class PlayerSprintManager : MonoBehaviour
 
     public PlayerSprintPresenter Presenter => _presenter;
 
-    void Awake()
+    public void BootstrapAwake()
     {
         _model = new PlayerSprintModel(GetComponent<SpaceshipEffectsManager>().Presenter, _sprintEffect);
         _view = GetComponent<PlayerSprintView>();

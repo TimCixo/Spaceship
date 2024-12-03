@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpaceshipEffectsView), typeof(SpaceshipStatsManager))]
-public class SpaceshipEffectsManager : MonoBehaviour
+public class SpaceshipEffectsManager : MonoBehaviour, IBootstrapable
 {
     private SpaceshipEffectsModel _model;
     private SpaceshipEffectsView _view;
@@ -9,7 +9,7 @@ public class SpaceshipEffectsManager : MonoBehaviour
 
     public SpaceshipEffectsPresenter Presenter => _presenter;
 
-    void Awake()
+    public void BootstrapAwake()
     {
         _model = new SpaceshipEffectsModel(GetComponent<SpaceshipStatsManager>());
         _view = GetComponent<SpaceshipEffectsView>();

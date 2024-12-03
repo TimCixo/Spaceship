@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovementView), typeof(SpaceshipStatsManager))]
-public class PlayerMovementManager : MonoBehaviour
+public class PlayerMovementManager : MonoBehaviour, IBootstrapable
 { 
     private PlayerMovementModel _model;
     private PlayerMovementView _view;
@@ -9,7 +9,7 @@ public class PlayerMovementManager : MonoBehaviour
 
     public PlayerMovementPresenter Presenter => _presenter;
 
-    private void Awake()
+    public void BootstrapAwake()
     {
         _model = new PlayerMovementModel(GetComponent<SpaceshipStatsManager>().Presenter);
         _view = GetComponent<PlayerMovementView>();

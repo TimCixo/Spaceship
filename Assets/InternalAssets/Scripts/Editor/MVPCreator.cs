@@ -115,7 +115,7 @@ public class {_baseName}Manager : MonoBehaviour
 
     public {_baseName}Presenter Presenter => _presenter;
 
-    void Awake()
+    private void Awake()
     {{
         _model = new {_baseName}Model();
         _view = GetComponent<{_baseName}View>();
