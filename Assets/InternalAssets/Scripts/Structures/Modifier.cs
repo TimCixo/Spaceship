@@ -6,6 +6,11 @@ public struct Modifier
     public float AttackDamage;
     public float AttackSpeed;
 
+    public override string ToString()
+    {
+        return $"MS: {MovementSpeed}, RS: {RotationSpeed}, MH: {MaxHealth}, AD: {AttackDamage}, AS: {AttackSpeed}";
+    }
+
     public static Modifier operator +(Modifier left, Modifier right)
     {
         return new Modifier
