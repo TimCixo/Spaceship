@@ -1,4 +1,5 @@
 using UnityEngine;
+using MvpCreator;
 
 [RequireComponent(typeof(SpaceshipStatsView))]
 public class SpaceshipStatsManager : MonoBehaviour, IBootstrapable
@@ -12,7 +13,7 @@ public class SpaceshipStatsManager : MonoBehaviour, IBootstrapable
 
     public SpaceshipStatsPresenter Presenter => _presenter;
 
-    public void BootstrapAwake()
+    public void BootstrapInit()
     {
         _model = new SpaceshipStatsModel(_spaceshipBaseStats);
         _view = GetComponent<SpaceshipStatsView>();
