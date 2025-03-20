@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class SpaceshipStatsView : MonoBehaviour
+namespace Spaceship.Stats
 {
-    // View components and UI handling here
+    public class SpaceshipStatsView : MonoBehaviour
+    {
+        // View components and UI handling here
+    }
 }

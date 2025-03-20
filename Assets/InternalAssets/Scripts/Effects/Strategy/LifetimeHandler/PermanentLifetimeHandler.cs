@@ -1,26 +1,29 @@
 #pragma warning disable CS0067
 using System;
 
-public class PermanentLifetimeHandler : ILifetimeHandler
+namespace Effects.LifetimeHandler
 {
-    private DateTime _startTime;
-    private TimeSpan _timePassed;
-
-    public DateTime StartTime => _startTime;
-    public TimeSpan TimeLeft { get; }
-    public TimeSpan TimePassed => _timePassed;
-    public TimeSpan Duration { get; }
-    
-    public event Action OnTimeOut;
-
-    public PermanentLifetimeHandler()
+    public class PermanentLifetimeHandler : ILifetimeHandler
     {
-        _startTime = DateTime.Now;
-        _timePassed = TimeSpan.Zero;
-    }
+        private DateTime _startTime;
+        private TimeSpan _timePassed;
 
-    public void Update()
-    {
-        _timePassed = DateTime.Now - _startTime;
+        public DateTime StartTime => _startTime;
+        public TimeSpan TimeLeft { get; }
+        public TimeSpan TimePassed => _timePassed;
+        public TimeSpan Duration { get; }
+
+        public event Action OnTimeOut;
+
+        public PermanentLifetimeHandler()
+        {
+            _startTime = DateTime.Now;
+            _timePassed = TimeSpan.Zero;
+        }
+
+        public void Update()
+        {
+            _timePassed = DateTime.Now - _startTime;
+        }
     }
 }

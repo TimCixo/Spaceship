@@ -1,21 +1,25 @@
 using UnityEngine;
 using MvpCreator;
+using Spaceship.Effects;
 
-[RequireComponent(typeof(PlayerSprintView), typeof(SpaceshipEffectsManager))]
-public class PlayerSprintManager : MonoBehaviour, IBootstrapable
+namespace Spaceship.Sprint
 {
-    private PlayerSprintModel _model;
-    private PlayerSprintView _view;
-    private PlayerSprintPresenter _presenter;
-    [SerializeField]
-    private StatusEffectData _sprintEffect;
-
-    public PlayerSprintPresenter Presenter => _presenter;
-
-    public void BootstrapInit()
+    [RequireComponent(typeof(PlayerSprintView), typeof(SpaceshipEffectsManager))]
+    public class PlayerSprintManager : MonoBehaviour, IBootstrapable
     {
-        _model = new PlayerSprintModel(GetComponent<SpaceshipEffectsManager>().Presenter, _sprintEffect);
-        _view = GetComponent<PlayerSprintView>();
-        _presenter = new PlayerSprintPresenter(_model, _view);
+        private PlayerSprintModel _model;
+        private PlayerSprintView _view;
+        private PlayerSprintPresenter _presenter;
+        [SerializeField]
+        private StatusEffectData _sprintEffect;
+
+        public PlayerSprintPresenter Presenter => _presenter;
+
+        public void BootstrapInit()
+        {
+            _model = new PlayerSprintModel(GetComponent<SpaceshipEffectsManager>().Presenter, _sprintEffect);
+            _view = GetComponent<PlayerSprintView>();
+            _presenter = new PlayerSprintPresenter(_model, _view);
+        }
     }
 }

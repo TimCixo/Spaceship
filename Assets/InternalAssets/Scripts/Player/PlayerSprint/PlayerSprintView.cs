@@ -1,43 +1,47 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Spaceship.Effects;
 
-[RequireComponent(typeof(SpaceshipEffectsManager))]
-public class PlayerSprintView : MonoBehaviour
+namespace Spaceship.Sprint
 {
-    [SerializeField]
-    private InputActionReference _sprintAction;
-    private SpaceshipEffectsPresenter _effectsPresenter;
-    
-    public Action OnSprintPerformed;
-    public Action OnSprintCanceled;
-
-    private void Awake()
+    [RequireComponent(typeof(SpaceshipEffectsManager))]
+    public class PlayerSprintView : MonoBehaviour
     {
-        _effectsPresenter = GetComponent<SpaceshipEffectsManager>().Presenter;
-    }
+        [SerializeField]
+        private InputActionReference _sprintAction;
+        private SpaceshipEffectsPresenter _effectsPresenter;
 
-    private void OnEnable()
-    {
-        _sprintAction.action.Enable();
-        _sprintAction.action.performed += HandleSprintPerformed;
-        _sprintAction.action.canceled += HandleMoveCanceled;
-    }
+        public Action OnSprintPerformed;
+        public Action OnSprintCanceled;
 
-    private void OnDisable()
-    {
-        _sprintAction.action.Disable();
-        _sprintAction.action.performed -= HandleSprintPerformed;
-        _sprintAction.action.canceled -= HandleMoveCanceled;
-    }
+        private void Awake()
+        {
+            _effectsPresenter = GetComponent<SpaceshipEffectsManager>().Presenter;
+        }
 
-    private void HandleSprintPerformed(InputAction.CallbackContext context)
-    {
-        OnSprintPerformed?.Invoke();
-    }
+        private void OnEnable()
+        {
+            _sprintAction.action.Enable();
+            _sprintAction.action.performed += HandleSprintPerformed;
+            _sprintAction.action.canceled += HandleMoveCanceled;
+        }
 
-    private void HandleMoveCanceled(InputAction.CallbackContext context)
-    {
-        OnSprintCanceled?.Invoke();
+        private void OnDisable()
+        {
+            _sprintAction.action.Disable();
+            _sprintAction.action.performed -= HandleSprintPerformed;
+            _sprintAction.action.canceled -= HandleMoveCanceled;
+        }
+
+        private void HandleSprintPerformed(InputAction.CallbackContext context)
+        {
+            OnSprintPerformed?.Invoke();
+        }
+
+        private void HandleMoveCanceled(InputAction.CallbackContext context)
+        {
+            OnSprintCanceled?.Invoke();
+        }
     }
 }

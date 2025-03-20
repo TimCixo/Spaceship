@@ -1,19 +1,23 @@
 using UnityEngine;
 using MvpCreator;
+using Spaceship.Stats;
 
-[RequireComponent(typeof(SpaceshipEffectsView), typeof(SpaceshipStatsManager))]
-public class SpaceshipEffectsManager : MonoBehaviour, IBootstrapable
+namespace Spaceship.Effects
 {
-    private SpaceshipEffectsModel _model;
-    private SpaceshipEffectsView _view;
-    private SpaceshipEffectsPresenter _presenter;
-
-    public SpaceshipEffectsPresenter Presenter => _presenter;
-
-    public void BootstrapInit()
+    [RequireComponent(typeof(SpaceshipEffectsView), typeof(SpaceshipStatsManager))]
+    public class SpaceshipEffectsManager : MonoBehaviour, IBootstrapable
     {
-        _model = new SpaceshipEffectsModel(GetComponent<SpaceshipStatsManager>());
-        _view = GetComponent<SpaceshipEffectsView>();
-        _presenter = new SpaceshipEffectsPresenter(_model, _view);
+        private SpaceshipEffectsModel _model;
+        private SpaceshipEffectsView _view;
+        private SpaceshipEffectsPresenter _presenter;
+
+        public SpaceshipEffectsPresenter Presenter => _presenter;
+
+        public void BootstrapInit()
+        {
+            _model = new SpaceshipEffectsModel(GetComponent<SpaceshipStatsManager>());
+            _view = GetComponent<SpaceshipEffectsView>();
+            _presenter = new SpaceshipEffectsPresenter(_model, _view);
+        }
     }
 }

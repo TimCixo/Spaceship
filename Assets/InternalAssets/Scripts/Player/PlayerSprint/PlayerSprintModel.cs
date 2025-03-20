@@ -1,14 +1,19 @@
-public class PlayerSprintModel
+using Spaceship.Effects;
+
+namespace Spaceship.Sprint
 {
-    private SpaceshipEffectsPresenter _effectsPresenter;
-    private StatusEffectData _sprintEffect;
-
-    public SpaceshipEffectsPresenter EffectsPresenter => _effectsPresenter;
-    public StatusEffectData SprintEffect => _sprintEffect;
-
-    public PlayerSprintModel(SpaceshipEffectsPresenter effectsPresenter, StatusEffectData sprintEffect)
+    public class PlayerSprintModel
     {
-        _effectsPresenter = effectsPresenter;
-        _sprintEffect = sprintEffect;
+        private SpaceshipEffectsPresenter _effectsPresenter;
+        private StatusEffectData _sprintEffect;
+
+        public SpaceshipEffectsPresenter EffectsPresenter => _effectsPresenter;
+        public StatusEffectData SprintEffect => _sprintEffect;
+
+        public PlayerSprintModel(SpaceshipEffectsPresenter effectsPresenter, StatusEffectData sprintEffect)
+        {
+            _effectsPresenter = effectsPresenter;
+            _sprintEffect = sprintEffect;
+        }
     }
 }

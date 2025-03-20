@@ -1,47 +1,50 @@
 using UnityEngine;
 
-public class PlayerMovementPresenter
+namespace Spaceship.Movement
 {
-    private PlayerMovementModel _model;
-    private PlayerMovementView _view;
-
-    public PlayerMovementPresenter(PlayerMovementModel model, PlayerMovementView view)
+    public class PlayerMovementPresenter
     {
-        _model = model;
-        _view = view;
+        private PlayerMovementModel _model;
+        private PlayerMovementView _view;
 
-        _view.OnFixedUpdate += OnFixedUpdate;
-        _view.OnMovePerformed += OnMovePerformed;
-        _view.OnMoveCanceled += OnMoveCanceled;
-    }
+        public PlayerMovementPresenter(PlayerMovementModel model, PlayerMovementView view)
+        {
+            _model = model;
+            _view = view;
 
-    private void OnFixedUpdate()
-    {
-        Move();
-        Rotate();
-    }
+            _view.OnFixedUpdate += OnFixedUpdate;
+            _view.OnMovePerformed += OnMovePerformed;
+            _view.OnMoveCanceled += OnMoveCanceled;
+        }
 
-    private void OnMovePerformed(Vector2 direction)
-    {
-        _model.Direction = direction;
-    }
+        private void OnFixedUpdate()
+        {
+            Move();
+            Rotate();
+        }
 
-    private void OnMoveCanceled()
-    {
-        _model.Direction = Vector2.zero;
-    }
+        private void OnMovePerformed(Vector2 direction)
+        {
+            _model.Direction = direction;
+        }
 
-    private void Move()
-    {
-        Vector2 force = _view.transform.up * _model.Direction.y * _model.StatsPresenter.MovementSpeed;
+        private void OnMoveCanceled()
+        {
+            _model.Direction = Vector2.zero;
+        }
 
-        _view.Rigidbody2D.AddForce(force, ForceMode2D.Force);
-    }
+        private void Move()
+        {
+            Vector2 force = _view.transform.up * _model.Direction.y * _model.StatsPresenter.MovementSpeed;
 
-    private void Rotate()
-    {
-        float force = -_model.Direction.x * _model.StatsPresenter.RotationSpeed;
+            _view.Rigidbody2D.AddForce(force, ForceMode2D.Force);
+        }
 
-        _view.Rigidbody2D.MoveRotation(_view.Rigidbody2D.rotation + force);
+        private void Rotate()
+        {
+            float force = -_model.Direction.x * _model.StatsPresenter.RotationSpeed;
+
+            _view.Rigidbody2D.MoveRotation(_view.Rigidbody2D.rotation + force);
+        }
     }
 }

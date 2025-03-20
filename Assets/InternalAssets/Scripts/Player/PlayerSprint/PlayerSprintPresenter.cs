@@ -1,26 +1,29 @@
-using UnityEngine;
+using Effects;
 
-public class PlayerSprintPresenter
+namespace Spaceship.Sprint
 {
-    private PlayerSprintModel _model;
-    private PlayerSprintView _view;
-
-    public PlayerSprintPresenter(PlayerSprintModel model, PlayerSprintView view)
+    public class PlayerSprintPresenter
     {
-        _model = model;
-        _view = view;
+        private PlayerSprintModel _model;
+        private PlayerSprintView _view;
 
-        _view.OnSprintPerformed += HandleSprintPerformed;
-    }
+        public PlayerSprintPresenter(PlayerSprintModel model, PlayerSprintView view)
+        {
+            _model = model;
+            _view = view;
 
-    private void HandleSprintPerformed()
-    {
-        EffectFabric effectFabric = new EffectFabric();
-        ISpaceshipEffect effect = effectFabric.GetSpaceshipEffect(_model.SprintEffect, _model.EffectsPresenter);
+            _view.OnSprintPerformed += HandleSprintPerformed;
+        }
 
-        // TODO: Інціцалізуються не втому порядку модулі, йопта. Зроби, щоб було правильно. Інакше пізда
-        _model.EffectsPresenter.AddEffect(effect);
+        private void HandleSprintPerformed()
+        {
+            EffectFabric effectFabric = new EffectFabric();
+            ISpaceshipEffect effect = effectFabric.GetSpaceshipEffect(_model.SprintEffect, _model.EffectsPresenter);
 
-        _view.OnSprintCanceled += effect.Destroy;
+            // TODO: Інціцалізуються не втому порядку модулі, йопта. Зроби, щоб було правильно. Інакше пізда
+            _model.EffectsPresenter.AddEffect(effect);
+
+            _view.OnSprintCanceled += effect.Destroy;
+        }
     }
 }

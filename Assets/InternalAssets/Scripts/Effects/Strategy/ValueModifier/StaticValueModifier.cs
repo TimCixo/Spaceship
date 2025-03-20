@@ -1,13 +1,17 @@
+using Effects.LifetimeHandler;
 using UnityEngine;
 
-public class StaticValueModifier : IValueModifier
+namespace Effects.ValueModifier
 {
-    public float Value => 1f;
-    public AnimationCurve DynamicCurve { get; set; }
-    public ILifetimeHandler LifetimeHandler { get; set; }
-
-    public void Update()
+    public class StaticValueModifier : IValueModifier
     {
-        // Do nothing
+        public float Value => 1f;
+        public AnimationCurve DynamicCurve { get; set; }
+        public ILifetimeHandler LifetimeHandler { get; set; }
+
+        public void Update()
+        {
+            // Do nothing
+        }
     }
 }

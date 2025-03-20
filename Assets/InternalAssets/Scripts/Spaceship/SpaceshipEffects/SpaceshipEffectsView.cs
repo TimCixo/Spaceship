@@ -1,12 +1,15 @@
 using System;
 using UnityEngine;
 
-public class SpaceshipEffectsView : MonoBehaviour
+namespace Spaceship.Effects
 {
-    public event Action OnUpdate;
-
-    private void Update()
+    public class SpaceshipEffectsView : MonoBehaviour
     {
-        OnUpdate?.Invoke();
+        public event Action OnUpdate;
+
+        private void Update()
+        {
+            OnUpdate?.Invoke();
+        }
     }
 }

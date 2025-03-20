@@ -2,50 +2,53 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovementView : MonoBehaviour
+namespace Spaceship.Movement
 {
-    [SerializeField]
-    private InputActionReference _moveAction;
-    private Rigidbody2D _rigidbody2D;
-
-    public Rigidbody2D Rigidbody2D => _rigidbody2D;
-    
-    public Action OnFixedUpdate;
-    public Action<Vector2> OnMovePerformed;
-    public Action OnMoveCanceled;
-
-    private void Awake()
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class PlayerMovementView : MonoBehaviour
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-    }
+        [SerializeField]
+        private InputActionReference _moveAction;
+        private Rigidbody2D _rigidbody2D;
 
-    private void OnEnable()
-    {
-        _moveAction.action.Enable();
-        _moveAction.action.performed += HandleMovePerformed;
-        _moveAction.action.canceled += HandleMoveCanceled;
-    }
+        public Rigidbody2D Rigidbody2D => _rigidbody2D;
 
-    private void OnDisable()
-    {
-        _moveAction.action.Disable();
-        _moveAction.action.performed -= HandleMovePerformed;
-        _moveAction.action.canceled -= HandleMoveCanceled;
-    }
+        public Action OnFixedUpdate;
+        public Action<Vector2> OnMovePerformed;
+        public Action OnMoveCanceled;
 
-    private void FixedUpdate()
-    {
-        OnFixedUpdate?.Invoke();
-    }
+        private void Awake()
+        {
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+        }
 
-    private void HandleMovePerformed(InputAction.CallbackContext context)
-    {
-        OnMovePerformed?.Invoke(context.ReadValue<Vector2>());
-    }
+        private void OnEnable()
+        {
+            _moveAction.action.Enable();
+            _moveAction.action.performed += HandleMovePerformed;
+            _moveAction.action.canceled += HandleMoveCanceled;
+        }
 
-    private void HandleMoveCanceled(InputAction.CallbackContext context)
-    {
-        OnMoveCanceled?.Invoke();
+        private void OnDisable()
+        {
+            _moveAction.action.Disable();
+            _moveAction.action.performed -= HandleMovePerformed;
+            _moveAction.action.canceled -= HandleMoveCanceled;
+        }
+
+        private void FixedUpdate()
+        {
+            OnFixedUpdate?.Invoke();
+        }
+
+        private void HandleMovePerformed(InputAction.CallbackContext context)
+        {
+            OnMovePerformed?.Invoke(context.ReadValue<Vector2>());
+        }
+
+        private void HandleMoveCanceled(InputAction.CallbackContext context)
+        {
+            OnMoveCanceled?.Invoke();
+        }
     }
 }

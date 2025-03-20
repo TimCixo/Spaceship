@@ -1,19 +1,23 @@
+using Spaceship.Stats;
 using UnityEngine;
 
-public class PlayerMovementModel
+namespace Spaceship.Movement
 {
-    private SpaceshipStatsPresenter _statsPresenter;
-    private Vector2 _direction;
-
-    public SpaceshipStatsPresenter StatsPresenter => _statsPresenter;
-    public Vector2 Direction
+    public class PlayerMovementModel
     {
-        get => _direction;
-        set => _direction = value;
-    }
+        private SpaceshipStatsPresenter _statsPresenter;
+        private Vector2 _direction;
 
-    public PlayerMovementModel(SpaceshipStatsPresenter statsPresenter)
-    {
-        _statsPresenter = statsPresenter;
+        public SpaceshipStatsPresenter StatsPresenter => _statsPresenter;
+        public Vector2 Direction
+        {
+            get => _direction;
+            set => _direction = value;
+        }
+
+        public PlayerMovementModel(SpaceshipStatsPresenter statsPresenter)
+        {
+            _statsPresenter = statsPresenter;
+        }
     }
 }
