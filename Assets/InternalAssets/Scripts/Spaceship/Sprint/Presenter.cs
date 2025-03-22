@@ -2,12 +2,12 @@ using Effects;
 
 namespace Spaceship.Sprint
 {
-    public class PlayerSprintPresenter
+    public class Presenter
     {
-        private PlayerSprintModel _model;
-        private PlayerSprintView _view;
+        private Model _model;
+        private View _view;
 
-        public PlayerSprintPresenter(PlayerSprintModel model, PlayerSprintView view)
+        public Presenter(Model model, View view)
         {
             _model = model;
             _view = view;

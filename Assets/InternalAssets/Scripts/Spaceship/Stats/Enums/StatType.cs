@@ -1,6 +1,6 @@
 namespace Spaceship.Stats
 {
-    public enum SpaceshipStatType
+    public enum StatType
     {
         MovementSpeed,
         RotationSpeed,

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Spaceship.Effects
 {
-    public class SpaceshipEffectsView : MonoBehaviour
+    public class View : MonoBehaviour
     {
         public event Action OnUpdate;
 

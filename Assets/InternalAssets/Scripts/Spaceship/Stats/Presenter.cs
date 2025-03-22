@@ -1,9 +1,9 @@
 namespace Spaceship.Stats
 {
-    public class SpaceshipStatsPresenter
+    public class Presenter
     {
-        private SpaceshipStatsModel _model;
-        private SpaceshipStatsView _view;
+        private Model _model;
+        private View _view;
 
         public float MovementSpeed => _model.MovementSpeed;
         public float RotationSpeed => _model.RotationSpeed;
@@ -12,7 +12,7 @@ namespace Spaceship.Stats
         public float AttackDamage => _model.AttackDamage;
         public float AttackSpeed => _model.AttackSpeed;
 
-        public SpaceshipStatsPresenter(SpaceshipStatsModel model, SpaceshipStatsView view)
+        public Presenter(Model model, View view)
         {
             _model = model;
             _view = view;

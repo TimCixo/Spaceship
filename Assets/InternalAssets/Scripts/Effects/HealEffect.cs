@@ -7,12 +7,12 @@ namespace Effects
     public class HealEffect : ISpaceshipEffect
     {
         private HealEffectData _data;
-        private SpaceshipEffectsPresenter _handler;
+        private Presenter _handler;
 
         public IValueModifier ValueModifier { get; set; }
         public ILifetimeHandler LifetimeHandler { get; set; }
 
-        public HealEffect(SpaceshipEffectData effectData, SpaceshipEffectsPresenter handler)
+        public HealEffect(SpaceshipEffectData effectData, Presenter handler)
         {
             _data = effectData as HealEffectData;
             _handler = handler;

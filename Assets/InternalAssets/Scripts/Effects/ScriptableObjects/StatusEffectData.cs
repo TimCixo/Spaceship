@@ -8,13 +8,13 @@ namespace Spaceship.Effects
     public class StatusEffectData : SpaceshipEffectData
     {
         [SerializeField]
-        private SpaceshipStatType _statType;
+        private StatType _statType;
         [SerializeField]
         private float _value;
         [SerializeField]
         private bool _isPercentage;
 
-        public SpaceshipStatType StatType => _statType;
+        public StatType StatType => _statType;
         public float Value => _value;
         public bool IsPercentage => _isPercentage;
 

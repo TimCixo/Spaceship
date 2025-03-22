@@ -4,18 +4,18 @@ using Spaceship.Stats;
 
 namespace Spaceship.Effects
 {
-    public class SpaceshipEffectsModel
+    public class Model
     {
         private List<ISpaceshipEffect> _effects = new List<ISpaceshipEffect>();
-        private SpaceshipStatsManager _statsManager;
+        private Stats.Manager _statsManager;
 
         public List<ISpaceshipEffect> Effects => _effects;
         public Modifier NumericModifier = new Modifier();
         public Modifier PercentageModifier = new Modifier();
         public Modifier Modifier = new Modifier();
-        public SpaceshipStatsManager StatsManager => _statsManager;
+        public Stats.Manager StatsManager => _statsManager;
 
-        public SpaceshipEffectsModel(SpaceshipStatsManager statsManager)
+        public Model(Stats.Manager statsManager)
         {
             _statsManager = statsManager;
         }

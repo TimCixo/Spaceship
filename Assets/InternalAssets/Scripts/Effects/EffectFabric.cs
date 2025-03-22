@@ -8,22 +8,22 @@ namespace Effects
 {
     public class EffectFabric
     {
-        private readonly Dictionary<EffectType, Func<SpaceshipEffectData, SpaceshipEffectsPresenter, ISpaceshipEffect>> _effectRegistry;
+        private readonly Dictionary<EffectType, Func<SpaceshipEffectData, Presenter, ISpaceshipEffect>> _effectRegistry;
 
         public EffectFabric()
         {
-            _effectRegistry = new Dictionary<EffectType, Func<SpaceshipEffectData, SpaceshipEffectsPresenter, ISpaceshipEffect>>();
+            _effectRegistry = new Dictionary<EffectType, Func<SpaceshipEffectData, Presenter, ISpaceshipEffect>>();
 
             RegisterEffect(EffectType.Status, (effectData, handler) => new StatusEffect(effectData, handler));
             RegisterEffect(EffectType.Heal, (effectData, handler) => new HealEffect(effectData, handler));
         }
 
-        public void RegisterEffect(EffectType type, Func<SpaceshipEffectData, SpaceshipEffectsPresenter, ISpaceshipEffect> constructor)
+        public void RegisterEffect(EffectType type, Func<SpaceshipEffectData, Presenter, ISpaceshipEffect> constructor)
         {
             _effectRegistry[type] = constructor;
         }
 
-        public ISpaceshipEffect GetSpaceshipEffect(SpaceshipEffectData effectData, SpaceshipEffectsPresenter handler)
+        public ISpaceshipEffect GetSpaceshipEffect(SpaceshipEffectData effectData, Presenter handler)
         {
             if (_effectRegistry.TryGetValue(effectData.Type, out var constructor))
             {

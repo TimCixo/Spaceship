@@ -3,19 +3,19 @@ using UnityEngine;
 
 namespace Spaceship.Movement
 {
-    public class PlayerMovementModel
+    public class Model
     {
-        private SpaceshipStatsPresenter _statsPresenter;
+        private Stats.Presenter _statsPresenter;
         private Vector2 _direction;
 
-        public SpaceshipStatsPresenter StatsPresenter => _statsPresenter;
+        public Stats.Presenter StatsPresenter => _statsPresenter;
         public Vector2 Direction
         {
             get => _direction;
             set => _direction = value;
         }
 
-        public PlayerMovementModel(SpaceshipStatsPresenter statsPresenter)
+        public Model(Stats.Presenter statsPresenter)
         {
             _statsPresenter = statsPresenter;
         }

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 namespace Spaceship.Movement
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class PlayerMovementView : MonoBehaviour
+    public class View : MonoBehaviour
     {
         [SerializeField]
         private InputActionReference _moveAction;

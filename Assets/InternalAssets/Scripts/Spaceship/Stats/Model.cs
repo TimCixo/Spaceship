@@ -1,6 +1,6 @@
 namespace Spaceship.Stats
 {
-    public class SpaceshipStatsModel
+    public class Model
     {
         private SpaceshipBaseStats _baseStats;
         private float _movementSpeed;
@@ -44,7 +44,7 @@ namespace Spaceship.Stats
             set { _attackSpeed = value > 0 ? value : 0; }
         }
 
-        public SpaceshipStatsModel(SpaceshipBaseStats spaceshipBaseStats)
+        public Model(SpaceshipBaseStats spaceshipBaseStats)
         {
             _baseStats = spaceshipBaseStats;
 

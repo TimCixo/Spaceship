@@ -3,14 +3,14 @@ using Spaceship.Stats;
 
 namespace Spaceship.Effects
 {
-    public class SpaceshipEffectsPresenter
+    public class Presenter
     {
-        private SpaceshipEffectsModel _model;
-        private SpaceshipEffectsView _view;
+        private Model _model;
+        private View _view;
 
-        public SpaceshipEffectsModel Model => _model;
+        public Model Model => _model;
 
-        public SpaceshipEffectsPresenter(SpaceshipEffectsModel model, SpaceshipEffectsView view)
+        public Presenter(Model model, View view)
         {
             _model = model;
             _view = view;

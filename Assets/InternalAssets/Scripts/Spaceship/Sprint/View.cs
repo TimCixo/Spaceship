@@ -5,19 +5,19 @@ using Spaceship.Effects;
 
 namespace Spaceship.Sprint
 {
-    [RequireComponent(typeof(SpaceshipEffectsManager))]
-    public class PlayerSprintView : MonoBehaviour
+    [RequireComponent(typeof(Manager))]
+    public class View : MonoBehaviour
     {
         [SerializeField]
         private InputActionReference _sprintAction;
-        private SpaceshipEffectsPresenter _effectsPresenter;
+        private Presenter _effectsPresenter;
 
         public Action OnSprintPerformed;
         public Action OnSprintCanceled;
 
         private void Awake()
         {
-            _effectsPresenter = GetComponent<SpaceshipEffectsManager>().Presenter;
+            _effectsPresenter = GetComponent<Manager>().Presenter;
         }
 
         private void OnEnable()

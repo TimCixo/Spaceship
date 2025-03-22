@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace Spaceship.Movement
 {
-    public class PlayerMovementPresenter
+    public class Presenter
     {
-        private PlayerMovementModel _model;
-        private PlayerMovementView _view;
+        private Model _model;
+        private View _view;
 
-        public PlayerMovementPresenter(PlayerMovementModel model, PlayerMovementView view)
+        public Presenter(Model model, View view)
         {
             _model = model;
             _view = view;

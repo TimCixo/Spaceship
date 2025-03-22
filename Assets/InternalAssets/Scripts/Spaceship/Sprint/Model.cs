@@ -2,15 +2,15 @@ using Spaceship.Effects;
 
 namespace Spaceship.Sprint
 {
-    public class PlayerSprintModel
+    public class Model
     {
-        private SpaceshipEffectsPresenter _effectsPresenter;
+        private Effects.Presenter _effectsPresenter;
         private StatusEffectData _sprintEffect;
 
-        public SpaceshipEffectsPresenter EffectsPresenter => _effectsPresenter;
+        public Effects.Presenter EffectsPresenter => _effectsPresenter;
         public StatusEffectData SprintEffect => _sprintEffect;
 
-        public PlayerSprintModel(SpaceshipEffectsPresenter effectsPresenter, StatusEffectData sprintEffect)
+        public Model(Effects.Presenter effectsPresenter, StatusEffectData sprintEffect)
         {
             _effectsPresenter = effectsPresenter;
             _sprintEffect = sprintEffect;

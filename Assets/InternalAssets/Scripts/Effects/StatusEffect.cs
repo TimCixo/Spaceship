@@ -1,19 +1,21 @@
 using Effects.LifetimeHandler;
 using Effects.ValueModifier;
 using Spaceship.Effects;
-using Spaceship.Stats;
+
+using Modifier = Spaceship.Stats.Modifier;
+using StatType = Spaceship.Stats.StatType;
 
 namespace Effects
 {
     public class StatusEffect : ISpaceshipEffect
     {
         private StatusEffectData _data;
-        private SpaceshipEffectsPresenter _handler;
+        private Presenter _handler;
 
         public IValueModifier ValueModifier { get; set; }
         public ILifetimeHandler LifetimeHandler { get; set; }
 
-        public StatusEffect(SpaceshipEffectData effectData, SpaceshipEffectsPresenter handler)
+        public StatusEffect(SpaceshipEffectData effectData, Presenter handler)
         {
             _data = effectData as StatusEffectData;
             _handler = handler;
@@ -45,19 +47,19 @@ namespace Effects
 
             switch (_data.StatType)
             {
-                case SpaceshipStatType.MovementSpeed:
+                case StatType.MovementSpeed:
                     modifier.MovementSpeed = _data.Value * ValueModifier.Value;
                     break;
-                case SpaceshipStatType.RotationSpeed:
+                case StatType.RotationSpeed:
                     modifier.RotationSpeed = _data.Value * ValueModifier.Value;
                     break;
-                case SpaceshipStatType.MaxHealth:
+                case StatType.MaxHealth:
                     modifier.MaxHealth = _data.Value * ValueModifier.Value;
                     break;
-                case SpaceshipStatType.AttackDamage:
+                case StatType.AttackDamage:
                     modifier.AttackDamage = _data.Value * ValueModifier.Value;
                     break;
-                case SpaceshipStatType.AttackSpeed:
+                case StatType.AttackSpeed:
                     modifier.AttackSpeed = _data.Value * ValueModifier.Value;
                     break;
             }
