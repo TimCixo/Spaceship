@@ -4,7 +4,7 @@ using Spaceship.Effects;
 
 namespace Spaceship.Sprint
 {
-    [RequireComponent(typeof(View), typeof(Effects.Manager))]
+    [RequireComponent(typeof(View), typeof(Effects.Manager), typeof(Bootstrap))]
     public class Manager : MonoBehaviour, IBootstrapable
     {
         private Model _model;

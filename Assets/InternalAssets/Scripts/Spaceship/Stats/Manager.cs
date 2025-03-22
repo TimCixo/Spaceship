@@ -3,7 +3,7 @@ using MvpCreator;
 
 namespace Spaceship.Stats
 {
-    [RequireComponent(typeof(View))]
+    [RequireComponent(typeof(View), typeof(Bootstrap))]
     public class Manager : MonoBehaviour, IBootstrapable
     {
         [SerializeField]

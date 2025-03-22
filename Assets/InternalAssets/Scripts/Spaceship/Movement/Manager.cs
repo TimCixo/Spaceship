@@ -1,10 +1,9 @@
 using UnityEngine;
 using MvpCreator;
-using Spaceship.Stats;
 
 namespace Spaceship.Movement
 {
-    [RequireComponent(typeof(View), typeof(Stats.Manager))]
+    [RequireComponent(typeof(View), typeof(Stats.Manager), typeof(Bootstrap))]
     public class Manager : MonoBehaviour, IBootstrapable
     {
         private Model _model;
